@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Your Name, Horrible Cop
+<!-- layout: default -->
+title: Yiran Wang, Horrible Cop
 ---
 
 ## Welcome to GitHub Pages
