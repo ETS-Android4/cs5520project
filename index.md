@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Yiran Wang, Horrible Cop
+<!-- title: Yiran Wang, Horrible Cop -->
 ---
 
 ## Welcome to GitHub Pages
