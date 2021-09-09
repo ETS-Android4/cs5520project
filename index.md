@@ -1,5 +1,5 @@
 ---
-<!-- layout: default -->
+layout: default
 title: Yiran Wang, Horrible Cop
 ---
 
