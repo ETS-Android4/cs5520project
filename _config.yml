@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 name: Yiran Wang, Awesome Dev
 markdown: kramdown
+permalink: /cs5520project/:year/:month/:day/:title
