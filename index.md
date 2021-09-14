@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Yiran Wang, Horrible Cop
+title: CS5520
 ---
 
 ## Welcome to GitHub Pages
@@ -46,6 +46,6 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 <ul class="posts">
 	{% for post in site.posts %}
 <!--     	<li><span>{{ post.date | date_to_string }}</span> -->
-	<a href="/cs5520_project{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    <li><a href="/CS5520{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	{% endfor %}
 </ul>
