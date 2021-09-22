@@ -5,13 +5,13 @@ Example 1
 - Base knowledge: They at least know they have to water and fertilize the plants in order to keep them alive.
 - Required knowledge: They need to know the name(s) of the plant(s).
 - Artifacts: 
-    Tools: 
-        The mobile app about how to grow plants
-        Tools to grow a plant
+    1) Tools: 
+        The mobile app about how to grow plants;
+        Tools to grow a plant;
         Water and fertilizer
-    Information: 
-        The names of the plants
-        The original sizes of the plants
+    2) Information: 
+        The names of the plants;
+        The original sizes of the plants.
 
 Example 2
 - Persona and scenario: A skincare lover wants to find the skincare routine or products that are most suitable to him/her.
@@ -20,13 +20,13 @@ Example 2
 - Base knowledge: They at least know their skin conditions.
 - Required knowledge: They need to know their skin types.
 - Artifacts: 
-    Tools: 
-      The mobile app for showing specifications of skincare products/treatments and making recommendations.
-      (Online) skincare products shops
-      Cosmetic surgery agencies for providing professional skin treatments
-    Information: 
-      Users’ skin conditions and skin types
-      Users’ budgets
+    1) Tools: 
+      The mobile app for showing specifications of skincare products/treatments and making recommendations;
+      (Online) skincare products shops;
+      Cosmetic surgery agencies for providing professional skin treatments;
+    2) Information: 
+      Users’ skin conditions and skin types;
+      Users’ budgets.
 
 Example 3
 - Persona and scenario: For convenience, differernt people pay for the bills shared by a group at different times (even in different currencies). And each one of the group wants to know the amount of money they should transfer to/receive from other people. 
@@ -35,9 +35,9 @@ Example 3
 - Base knowledge: They need to know the exchange rates between different currencies.
 - Required knowledge: They need to know the bills each person pays and who share the bills.
 - Artifacts: 
-    Tools: 
-        The mobile app for calculating the amount of money each one should give to/receive from other people
-    Information: 
-        The bills.
+    1) Tools: 
+        The mobile app for calculating the amount of money each one should give to/receive from other people;
+    2) Information: 
+        The bills;
         The exchange rates between different currencies.
 
