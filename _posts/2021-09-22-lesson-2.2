@@ -1,0 +1,21 @@
+During this lesson, I have learnt the lifecycle of an activity when interacts with other activities and how to restore a View instance state after screen rotating. 
+
+Here are two images of what I built following the lesson. 
+![picture1](https://raw.githubusercontent.com/Yiranluc/cs5520project/gh-pages/_posts/pictures/assignment_2.2_1.png)
+![picture2](https://raw.githubusercontent.com/Yiranluc/cs5520project/gh-pages/_posts/pictures/assignment_2.2_2.png)
+
+Here are the results of the homework: The counted number stays the same even after screen rotation.
+![picture3](https://raw.githubusercontent.com/Yiranluc/cs5520project/gh-pages/_posts/pictures/assignment_2.2_3.png)
+![picture4](https://raw.githubusercontent.com/Yiranluc/cs5520project/gh-pages/_posts/pictures/assignment_2.2_4.png)
+
+Question 1: If you run the homework app before implementing onSaveInstanceState(), what happens if you rotate the device? Choose one:
+A: The counter is reset to 0, but the contents of the EditText is preserved.
+
+Question 2: What Activity lifecycle methods are called when a device-configuration change (such as rotation) occurs? Choose one:
+A: Android shuts down your Activity by calling onPause(), onStop(), and onDestroy(), and then starts it over again, calling onCreate(), onStart(), and onResume().
+
+Question 3: When in the Activity lifecycle is onSaveInstanceState() called? Choose one:
+A: onSaveInstanceState() is called before the onStop() method.
+
+Question 4: Which Activity lifecycle methods are best to use for saving data before the Activity is finished or destroyed? Choose one:
+A: onPause() or onStop()
