@@ -49,4 +49,4 @@
 49) How to see whether another person likes me or not?
 50) How to stop violence？
 
-Links to further exploration of 3 problems: https://github.com/Yiranluc/cs5520project/blob/gh-pages/_posts/2021-09-22-3-specific-problems
+The link to further exploration of 3 problems: https://yiranluc.github.io/cs5520project/2021/09/22/3-specific-problems.html
