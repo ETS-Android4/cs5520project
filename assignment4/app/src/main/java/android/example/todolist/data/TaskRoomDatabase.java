@@ -7,11 +7,10 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-import edu.northeastern.cs5520.todo_adrienne.data.TaskDao;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Task.class}, version = 3, exportSchema = false)
+@Database(entities = {Task.class}, version = 4, exportSchema = false)
 public abstract class TaskRoomDatabase extends RoomDatabase {
 
     public abstract TaskDao TaskDao();

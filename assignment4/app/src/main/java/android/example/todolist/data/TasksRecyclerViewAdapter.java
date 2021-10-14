@@ -1,18 +1,9 @@
 package android.example.todolist.data;
-
-import android.content.Context;
-import android.example.todolist.R;
-import android.example.todolist.databinding.TaskLayoutBinding;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 public final class TasksRecyclerViewAdapter extends ListAdapter<Task, TasksViewHolder> {
     // Constructor
@@ -32,7 +23,6 @@ public final class TasksRecyclerViewAdapter extends ListAdapter<Task, TasksViewH
         // This is how we bind the UI to a specific task
         holder.bind(getItem(position));
     }
-
 
 
     public static class TaskDiff extends DiffUtil.ItemCallback<Task> {

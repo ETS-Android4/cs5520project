@@ -21,7 +21,6 @@ public class Task implements Serializable {
 
     private String description;
 
-    @NonNull
     private String date_ddl;
     private boolean status;
 
@@ -50,12 +49,11 @@ public class Task implements Serializable {
         this.description = description;
     }
 
-    @NonNull
     public String getDate_ddl() {
         return date_ddl;
     }
 
-    public void setDate_ddl(@NonNull String date_ddl) {
+    public void setDate_ddl(String date_ddl) {
         this.date_ddl = date_ddl;
     }
 

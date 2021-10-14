@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import edu.northeastern.cs5520.todo_adrienne.data.TaskDao;
 public class TaskDbDataSource implements ITaskDataSource {
     private TaskDao mTaskDao;
 
@@ -15,9 +14,9 @@ public class TaskDbDataSource implements ITaskDataSource {
     }
 
     @Override
-    public void insert(Task todo) {
+    public void insert(Task task) {
         TaskRoomDatabase.databaseWriteExecutor.execute(() -> {
-            mTaskDao.insert(todo);
+            mTaskDao.insert(task);
         });
     }
 
