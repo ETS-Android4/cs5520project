@@ -1,16 +1,20 @@
 package android.example.todolist.data;
 
+import android.os.Build;
+import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 import java.util.List;
 @Entity(tableName="task_table")
-public class Task implements Serializable {
+public class Task implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")
@@ -20,9 +24,51 @@ public class Task implements Serializable {
     private String title;
 
     private String description;
-
+    private String time_ddl;
     private String date_ddl;
     private boolean status;
+
+    public String getTime_ddl() {
+        return time_ddl;
+    }
+
+    public void setTime_ddl(String time_ddl) {
+        this.time_ddl = time_ddl;
+    }
+
+    protected Task(Parcel in) {
+        id = in.readInt();
+        title = in.readString();
+        description = in.readString();
+        date_ddl = in.readString();
+        time_ddl = in.readString();
+        status = in.readByte() != 0;
+    }
+
+    public static final Creator<Task> CREATOR = new Creator<Task>() {
+        @Override
+        public Task createFromParcel(Parcel in) {
+            return new Task(in);
+        }
+
+        @Override
+        public Task[] newArray(int size) {
+            return new Task[size];
+        }
+    };
+
+    @Ignore
+    public Task() {
+
+    }
+
+    public Task(int id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        //To add more attributes.
+
+    }
 
     public int getId() {
         return id;
@@ -70,5 +116,22 @@ public class Task implements Serializable {
         task.setTitle(title);
         task.setDescription(description);
         return task;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(title);
+        parcel.writeString(description);
+        //To add more attributes.
+//        parcel.writeString(date_ddl);
+//        parcel.writeString(time_ddl);
+//        parcel.writeBoolean(status);
     }
 }

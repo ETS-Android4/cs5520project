@@ -9,6 +9,8 @@ public interface ITaskDataSource {
 
     void deleteAll();
 
+    void update(Task task);
+
     LiveData<List<Task>> getTasks();
 
     LiveData<List<Task>> getNTasks(int n);

@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Task.class}, version = 4, exportSchema = false)
+@Database(entities = {Task.class}, version = 5, exportSchema = false)
 public abstract class TaskRoomDatabase extends RoomDatabase {
 
     public abstract TaskDao TaskDao();
@@ -24,7 +24,8 @@ public abstract class TaskRoomDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (TaskRoomDatabase.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+
+                INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             TaskRoomDatabase.class, "task_database")
                             .addCallback(sRoomDatabaseCallback)
                             .fallbackToDestructiveMigration()
@@ -47,10 +48,8 @@ public abstract class TaskRoomDatabase extends RoomDatabase {
                 // Populate the database in the background.
 
                 TaskDao dao = INSTANCE.TaskDao();
-                dao.deleteAll();
-
-                dao.insert(Task.createTask("Task 1", "do something, already"));
-                dao.insert(Task.createTask("Task 2", "and another thign!"));
+//                dao.insert(Task.createTask("Task 1", "do something, already"));
+//                dao.insert(Task.createTask("Task 2", "and another thign!"));
             });
         }
     };

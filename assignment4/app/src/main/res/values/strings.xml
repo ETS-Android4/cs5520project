@@ -13,4 +13,6 @@
     <string name="reminder_time">Time</string>
     <string name="tags">Tags</string>
     <string name="edit_task">Edit Task</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
 </resources>

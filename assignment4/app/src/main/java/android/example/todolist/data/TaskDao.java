@@ -7,6 +7,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -15,6 +16,9 @@ public interface TaskDao {
 
     @Insert(onConflict= OnConflictStrategy.IGNORE)
     void insert(Task task);
+
+    @Update
+    void update(Task task);
 
     @Query("DELETE FROM task_table")
     void deleteAll();

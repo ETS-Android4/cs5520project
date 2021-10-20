@@ -19,7 +19,8 @@ public class TaskRepository implements Iterable<Task>{
     private TaskRepository(Application application) {
 //        mToDoDataSource = new ToDoInMemoryDataSource();
         mTaskDataSource = new TaskDbDataSource(application);
-        this.createFakeData();
+//        mTaskDataSource.deleteAll();
+//        this.createFakeData();
     }
 
     public static TaskRepository getSingleton(Application application) {
@@ -43,6 +44,14 @@ public class TaskRepository implements Iterable<Task>{
 
     public void addTask(Task newToDo) {
         mTaskDataSource.insert(newToDo);
+    }
+
+    public void updateTask(Task newToDo) {
+        mTaskDataSource.update(newToDo);
+    }
+
+    public void deleteAll(){
+        mTaskDataSource.deleteAll();
     }
 
     private void createFakeData() {

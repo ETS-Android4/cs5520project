@@ -34,8 +34,8 @@ public class TaskViewModel extends AndroidViewModel {
         }
 
         // Using only *n* todos
-//        mAllToDos = repository.getAllTodos();
-        mAllTasks = repository.getNTasks(5);
+        mAllTasks = repository.getAllTasks();
+//        mAllTasks = repository.getNTasks(5);
 
         taskCreated.setValue(Boolean.FALSE);
     }
@@ -49,8 +49,17 @@ public class TaskViewModel extends AndroidViewModel {
         taskCreated.setValue(Boolean.TRUE);
     }
 
+    public void updateTask(Task task){
+
+        repository.updateTask(task);
+        taskCreated.setValue(Boolean.TRUE);
+    }
     public LiveData<List<Task>> getAllTasks() {
         return mAllTasks;
+    }
+
+    public void deleteAll() {
+        repository.deleteAll();
     }
 
 

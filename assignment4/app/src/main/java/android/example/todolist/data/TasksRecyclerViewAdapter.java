@@ -1,4 +1,5 @@
 package android.example.todolist.data;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -7,15 +8,17 @@ import androidx.recyclerview.widget.ListAdapter;
 
 public final class TasksRecyclerViewAdapter extends ListAdapter<Task, TasksViewHolder> {
     // Constructor
-    public TasksRecyclerViewAdapter(@NonNull DiffUtil.ItemCallback<Task> diffCallback) {
+    TasksViewHolder.OnTaskListener mOnTaskListener;
+    public TasksRecyclerViewAdapter(@NonNull DiffUtil.ItemCallback<Task> diffCallback, TasksViewHolder.OnTaskListener mOnTaskListener) {
         super(diffCallback);
+        this.mOnTaskListener = mOnTaskListener;
     }
 
 
     @NonNull
     @Override
     public TasksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return TasksViewHolder.create(parent);
+        return TasksViewHolder.create(parent, mOnTaskListener);
     }
 
     @Override
@@ -23,7 +26,6 @@ public final class TasksRecyclerViewAdapter extends ListAdapter<Task, TasksViewH
         // This is how we bind the UI to a specific task
         holder.bind(getItem(position));
     }
-
 
     public static class TaskDiff extends DiffUtil.ItemCallback<Task> {
 

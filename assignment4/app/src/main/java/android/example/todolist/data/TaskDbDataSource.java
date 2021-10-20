@@ -21,8 +21,17 @@ public class TaskDbDataSource implements ITaskDataSource {
     }
 
     @Override
-    public void deleteAll() {
+    public void update(Task task) {
+        TaskRoomDatabase.databaseWriteExecutor.execute(() -> {
+            mTaskDao.update(task);
+        });
+    }
 
+    @Override
+    public void deleteAll() {
+        TaskRoomDatabase.databaseWriteExecutor.execute(() -> {
+            mTaskDao.deleteAll();
+        });
     }
 
     @Override

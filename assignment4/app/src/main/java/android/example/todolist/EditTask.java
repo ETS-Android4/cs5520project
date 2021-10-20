@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+//Currently not used.
 public class EditTask extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

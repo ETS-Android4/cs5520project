@@ -12,59 +12,45 @@ import androidx.navigation.ui.AppBarConfiguration;
 import android.content.Intent;
 import android.example.todolist.data.Task;
 import android.example.todolist.data.TasksRecyclerViewAdapter;
+import android.example.todolist.data.TasksViewHolder;
 import android.example.todolist.databinding.ActivityMainBinding;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements
+        TasksViewHolder.OnTaskListener {
 //    private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private TaskViewModel mTaskViewModel;
+    private ArrayList<Task> mTasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//        final TasksRecyclerViewAdapter adapter = new TasksRecyclerViewAdapter(new TasksRecyclerViewAdapter.TaskDiff());
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        // Get a new or existing ViewModel from the ViewModelProvider.
-//        mTaskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
-//
-//        // Add an observer on the LiveData returned by getAlphabetizedWords.
-//        // The onChanged() method fires when the observed data changes and the activity is
-//        // in the foreground.
-//        mTaskViewModel.getAllTasks().observe(this, tasks -> {
-//            // Update the cached copy of the words in the adapter.
-//            adapter.submitList(tasks);
-//        });
-//
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(view -> {
-//            Intent intent = new Intent(MainActivity.this, AddNewTaskActivity.class);
-////            startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
-//        });
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //vars
+        mTasks = new ArrayList<>();
 
         final TasksRecyclerViewAdapter adapter =
-                new TasksRecyclerViewAdapter(new TasksRecyclerViewAdapter.TaskDiff());
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.recyclerView.setAdapter(adapter);
+                new TasksRecyclerViewAdapter(new TasksRecyclerViewAdapter.TaskDiff(), this);
         mTaskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
-
         mTaskViewModel.getAllTasks().observe(this, tasks -> {
+            mTasks.addAll(tasks);
             adapter.submitList(tasks);
         });
 
+        binding.recyclerView.setAdapter(adapter);
 
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    public void onTaskClick(int position) {
+        Intent intent = new Intent(this, AddNewTaskActivity.class);
+        intent.putExtra("selected_note", mTasks.get(position));
+        startActivity(intent);
     }
 
 //    @Override
