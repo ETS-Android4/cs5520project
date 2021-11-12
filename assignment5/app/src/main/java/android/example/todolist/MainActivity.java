@@ -9,11 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.example.todolist.data.Task;
 import android.example.todolist.data.TasksRecyclerViewAdapter;
 import android.example.todolist.data.TasksViewHolder;
 import android.example.todolist.databinding.ActivityMainBinding;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +30,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
         TasksViewHolder.OnTaskListener {
-//    private AppBarConfiguration appBarConfiguration;
+    private static final String CHANNEL_ID = "1";
+    //    private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private TaskViewModel mTaskViewModel;
     private ArrayList<Task> mTasks;
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        createNotificationChannel();
         //vars
         mTasks = new ArrayList<>();
 
@@ -68,6 +72,22 @@ public class MainActivity extends AppCompatActivity implements
         Intent intent = new Intent(this, AddNewTaskActivity.class);
         intent.putExtra("selected_note", mTasks.get(position));
         startActivity(intent);
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
 //    @Override

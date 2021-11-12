@@ -15,4 +15,6 @@
     <string name="edit_task">Edit Task</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
+    <string name="channel_name">\"my channel\"</string>
+    <string name="channel_description">This is for the reminders of task deadlines</string>
 </resources>

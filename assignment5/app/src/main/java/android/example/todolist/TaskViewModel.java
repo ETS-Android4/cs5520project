@@ -18,6 +18,8 @@ public class TaskViewModel extends AndroidViewModel {
     public MutableLiveData<String> taskDescription = new MutableLiveData<>();
     public MutableLiveData<String> taskDate = new MutableLiveData<>();
     public MutableLiveData<String> taskTime = new MutableLiveData<>();
+    public MutableLiveData<String> reminderDate = new MutableLiveData<>();
+    public MutableLiveData<String> reminderTime = new MutableLiveData<>();
 
 //    public MutableLiveData<Boolean> status = new MutableLiveData<>();
 
@@ -48,6 +50,16 @@ public class TaskViewModel extends AndroidViewModel {
             taskTime = new MutableLiveData<>();
             taskTime.setValue("");
         }
+
+        if (reminderDate == null) {
+            reminderDate = new MutableLiveData<>();
+            reminderDate.setValue("");
+        }
+
+        if (reminderTime == null) {
+            reminderTime = new MutableLiveData<>();
+            reminderTime.setValue("");
+        }
 //        if (status == null) {
 //            status = new MutableLiveData<>();
 //            status.setValue(false);
@@ -65,14 +77,11 @@ public class TaskViewModel extends AndroidViewModel {
     }
 
     public void createTask() {
-        try {
-            Date taskDateString = new SimpleDateFormat("E, dd MMMM yyyy").parse(taskDate.getValue());
-            Date taskTimeString = new SimpleDateFormat("HH:MM").parse(taskTime.getValue());
 
-            repository.addTask(Task.createTask(taskTitle.getValue(), taskDescription.getValue(), taskDateString.toString(), taskTimeString.toString()));
-            taskCreated.setValue(Boolean.TRUE);
-        } catch (ParseException e) {
-        }
+        repository.addTask(Task.createTask(taskTitle.getValue(), taskDescription.getValue(),
+                taskDate.getValue(),taskTime.getValue(), reminderDate.getValue(), reminderTime.getValue()));
+        taskCreated.setValue(Boolean.TRUE);
+
     }
 
     public void updateTask(Task task){

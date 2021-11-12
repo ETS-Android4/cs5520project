@@ -23,7 +23,8 @@
         android:textColor="@android:color/black"
         android:textColorLink="@color/gray"
         android:textSize="32sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -40,8 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/newTask"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Title"
+            android:inputType="textPersonName"
             android:text="@={viewmodel.taskTitle}"
             android:textAlignment="center"
             android:textColorLink="@color/gray"
@@ -53,9 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/taskTitle"
             android:ems="10"
+            android:hint="Task Description"
             android:inputType="textMultiLine"
             android:minHeight="48dp"
-            android:hint="Task Description"
             android:text="@={viewmodel.taskDescription}"
             android:textAlignment="center"
             android:textColorLink="@color/gray" />
@@ -70,34 +71,44 @@
             android:minHeight="48dp"
             android:text="@string/tags"
             android:textAlignment="center"
-            android:textColorLink="@color/gray"  />
+            android:textColorLink="@color/gray" />
 
-        <EditText
-            android:id="@+id/taskDate"
+
+        <LinearLayout
+            android:id="@+id/custom_config"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tags"
-            android:ems="10"
-            android:minHeight="48dp"
-            android:text="@={viewmodel.taskDate}"
-            android:hint="Deadline date"
-            android:textAlignment="center"
-            android:textColorLink="@color/gray"
-            android:onClick="chooseDate"/>
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/taskTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/deadlineDate"
-            android:ems="10"
-            android:inputType="time"
-            android:minHeight="48dp"
-            android:text="@={viewmodel.taskTime}"
-            android:hint="Deadline time"
-            android:textAlignment="center"
-            android:textColorLink="@color/gray"
-            android:onClick="chooseTime"/>
+
+            <TextView
+                android:id="@+id/taskDate"
+                android:layout_width="252dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Deadline date"
+                android:minHeight="48dp"
+                android:onClick="chooseDate"
+                android:text="@={viewmodel.taskDate}"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/taskTime"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="Deadline time"
+                android:minHeight="48dp"
+                android:onClick="chooseTime"
+                android:text="@={viewmodel.taskTime}"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
 
         <CheckBox
             android:id="@+id/reminder"
@@ -107,34 +118,45 @@
             android:layout_centerHorizontal="true"
             android:buttonTint="@android:color/holo_green_dark"
             android:paddingStart="8dp"
+            android:text="Remind me?"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:text="Remind me?" />
+            android:textSize="18sp" />
 
-
-        <EditText
-            android:id="@+id/reminderDate"
+        <LinearLayout
+            android:id="@+id/config"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/reminder"
-            android:ems="10"
-            android:inputType="date"
-            android:minHeight="48dp"
-            android:text="@string/date"
-            android:textAlignment="center"
-            android:textColorLink="@color/gray" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/reminderTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/reminderDate"
-            android:ems="10"
-            android:inputType="time"
-            android:minHeight="48dp"
-            android:text="@string/reminder_time"
-            android:textAlignment="center"
-            android:textColorLink="@color/gray" />
+
+            <TextView
+                android:id="@+id/reminderDate"
+                android:layout_width="252dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:text="@={viewmodel.reminderDate}"
+                android:hint="Reminder date"
+                android:minHeight="48dp"
+                android:onClick="chooseReminderDate"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/reminderTime"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:text="@={viewmodel.reminderTime}"
+                android:hint="Reminder time"
+                android:minHeight="48dp"
+                android:onClick="chooseReminderTime"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
