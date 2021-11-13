@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CS5520
+author: Yiran Wang
 ---
 
 ## Posts
