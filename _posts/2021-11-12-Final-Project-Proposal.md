@@ -1,3 +1,7 @@
+---
+author: Yiran Wang
+---
+
 In the final project, I would like to add more features to the existing To-do list app. Currently, the To-do app supports adding, editing a new Task and setting notification at a desired time. All the tasks are stored in local Room database.
 
 There are 3 major features/aspects that I would like to further develop on for the final demonstration:
