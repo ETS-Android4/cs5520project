@@ -10,9 +10,8 @@ This is a to-do list app to help people recording their daily tasks. It included
 5. Filter the tasks by their names.
 6. All the tasks are stored in a local Room database.
 
-Things to improve in the future:
-1. Currently, when drag and drop tasks multiple times (or interact with other functions), the list of created tasks will be shown multiple times on the main screen. However,
-after starting a new intent and getting back from it or restarting this app, everything are in good order again. I spent 2 days on debugging this issue. Unfortunately, it is still unsolved.
+## Things to improve in the future:
+1. Currently, when drag and drop tasks multiple times (or interact with other functions), the list of created tasks will be shown multiple times on the main screen. However, after starting a new intent and getting back from it or restarting this app, everything are in good order again. I spent 2 days on debugging this issue. Unfortunately, it is still unsolved.
 2. Enable user to delete a task, which should be easy to implement and very useful for users of this app.
 
 
