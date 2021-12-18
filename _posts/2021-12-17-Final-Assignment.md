@@ -1,7 +1,7 @@
 The repository of the final assignment is here: https://github.com/Yiranluc/cs5520project/tree/main/Final%20assignment
 A demo video is shown here: https://www.youtube.com/watch?v=7_7Tws8LLU0
 
-##Features of this app
+## Features of this app
 This is a to-do list app to help people recording their daily tasks. It includeds the following features:
 1. Add a new to-do task, which can include a title, a description, a deadline, a tag, and setting a later reminder (alarm) for this task.
 2. Update this to-do task.
