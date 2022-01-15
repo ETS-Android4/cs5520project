@@ -6,14 +6,26 @@ A demo video is shown here: https://www.youtube.com/watch?v=7_7Tws8LLU0
 
 Main screens of the current app are shown below:
 
-The Main Screen:
+### The Main Screen:
 
 ![picture1](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen.png)
 
-The screen for creating a new to-do task:
+You can filter the tasks by their names as shown below:
+
+![picture3](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen5.png)
+
+
+### The screen for creating a new to-do task:
 
 ![picture2](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen2.png)
 
+You can set a reminder for a task as shown below:
+
+![picture3](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen3.png)
+
+And a notification will pop up when it is the time to remind:
+
+![picture4](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen6.png)
 
 
 ## Features of this app
