@@ -4,9 +4,16 @@ The repository of the final assignment is here: https://github.com/Yiranluc/cs55
 
 A demo video is shown here: https://www.youtube.com/watch?v=7_7Tws8LLU0
 
-Screenshots of the current app are shown below:
+Main screens of the current app are shown below:
 
-![picture1](https://raw.githubusercontent.com/Yiranluc/cs5520project/gh-pages/_posts/pictures/assignment_4_1.png)
+The Main Screen:
+
+![picture1](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen.png)
+
+The screen for creating a new to-do task:
+
+![picture2](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen2.png)
+
 
 
 ## Features of this app
