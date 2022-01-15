@@ -4,8 +4,6 @@ The repository of the final assignment is here: https://github.com/Yiranluc/cs55
 
 A demo video is shown here: https://www.youtube.com/watch?v=7_7Tws8LLU0
 
-Main screens of the current app are shown below:
-
 ### The Main Screen:
 
 ![picture1](https://raw.githubusercontent.com/Yiranluc/cs5520project/main/images/Final_Screen.png)
